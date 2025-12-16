@@ -1,0 +1,100 @@
+/* vùng bọc form */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* card đẹp */
+.form-card {
+    background: #ffffff;
+    padding: 30px;
+    width: 650px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* tiêu đề */
+.form-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* nhóm input */
+.form-group {
+    margin-bottom: 18px;
+}
+
+/* label */
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #444;
+}
+
+/* input đẹp */
+.form-control-custom {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.form-control-custom:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+/* chia 2 cột */
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.half {
+    width: 50%;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* nút đẹp */
+.btn-custom {
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary-custom {
+    background: #f0ad4e;
+    color: white;
+}
+
+.btn-primary-custom:hover {
+    background: #ec971f;
+}
+
+.btn-reset-custom {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-reset-custom:hover {
+    background: #5a6268;
+}
+form {
+   margin-left: 100px;
+}

@@ -1,0 +1,66 @@
+/* ===== ABOUT US STYLE ===== */
+
+.content {
+    margin-bottom: 40px;
+}
+
+/* Khung tiêu đề giống banner */
+.header-content h3 {
+    display: inline-block;
+    background: #f5d10d;
+    color: #111;
+    padding: 12px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+/* Tạo hiệu ứng gãy góc giống hình bạn gửi */
+.header-content h3::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid #f5d10d;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+}
+
+/* Nội dung bên dưới */
+.content-body {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 0 8px 8px 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border-top: 4px solid #f5d10d;
+}
+
+/* Text */
+.content-body p,
+.content-body li {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* List đẹp hơn */
+.content-body ul {
+    padding-left: 20px;
+}
+
+.content-body ul li {
+    margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content h3 {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    .content-body {
+        padding: 20px;
+    }
+}
