@@ -7,21 +7,32 @@ if (isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = $_POST['password'];
 
-    // Lấy user theo username
-    $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+    $sql = "SELECT * FROM users WHERE username='$username' LIMIT 1";
     $res = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($res) == 1) {
 
         $user = mysqli_fetch_assoc($res);
+        $dbPassword = $user['password'];
 
-        // Kiểm tra mật khẩu
-        if (password_verify($password, $user['password'])) {
+        // Kiểm tra mật khẩu (hỗ trợ cả md5 & password_hash)
+        if (strlen($dbPassword) > 32) {
+            $isValid = password_verify($password, $dbPassword);
+        } else {
+            $isValid = (md5($password) === $dbPassword);
+        }
 
-            $_SESSION['username'] = $user['username'];
+        if ($isValid) {
+
+            $_SESSION['username'] = $username;
             $_SESSION['user_id']  = $user['id'];
 
-            header("Location: ../index.php?ls=success");
+            // ====== ĐIỀU KIỆN ADMIN DUY NHẤT ======
+            if ($username === 'Admin') {
+                header("Location: ../admin/product-list.php");
+            } else {
+                header("Location: ../index.php");
+            }
             exit();
 
         } else {
